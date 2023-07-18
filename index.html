@@ -16,18 +16,31 @@
                 <button class="text_word">Word</button>
             </div>
             <div class="box">
-                <input type="text">
+                <input id="input" type="text">
             </div>
             <div class="text">
-                <button class="convert">Convert</button>
+                <button class="convert" onclick="encode()">Convert</button>
             </div>
             <div class="result">
-                <p class="anser">
-                    Anser
+                <p id="output">
+                    
                 </p>
             </div>
         </div>
     </div>
-    
+    <script>
+    function encode() {
+    var input = document.getElementById("input").value;
+    var output = "";
+    for (var i = 0; i < input.length; i++) {
+    	if (input[i] >= 'a' && input[i] <= 'z') {
+            output += input.charCodeAt(i) - 96 + " ";
+            } else if (input[i] >= 'A' && input[i] <= 'Z') {
+            output += input.charCodeAt(i) - 64 + " ";
+        }
+    }
+        document.getElementById("output").innerHTML = output;
+}
+</script>
 </body>
 </html>
