@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>AI Convert text to number or number to text</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="btn">
+                <button class="number">Number</button>
+                <button class="icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+                <button class="text_word">Word</button>
+            </div>
+            <div class="box">
+                <input id="input2" type="text">
+            </div>
+            <div class="text">
+                <button class="convert" onclick="decode()">Convert</button>
+            </div>
+            <div class="result">
+                <p id="output2">
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+    function decode() {
+    var input = document.getElementById("input2").value;
+    var output2 = "";
+    var numbers = input.split(" ");
+        for (var i = 0; i < numbers.length; i++) {
+            output2 += " " + String.fromCharCode(parseInt(numbers[i]) + 64);
+    	}
+    document.getElementById("output2").innerHTML = output2 ;
+}
+</script>
+</body>
+</html>
